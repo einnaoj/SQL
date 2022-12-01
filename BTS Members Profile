@@ -1,0 +1,16 @@
+--Create table of BTS members profile
+
+CREATE TABLE BTS (id INTEGER PRIMARY KEY, stage_name TEXT, birth_name TEXT, birthday INTEGER, position_1 TEXT, position_2 TEXT);
+INSERT INTO BTS VALUES (1, "RM", "Kim Nam Joon", 940912, "Leader", "Main Rapper");
+INSERT INTO BTS VALUES (2, "Jin", "Kim Seok Jin", 921204, "Sub-Vocalist", "Visual");
+INSERT INTO BTS VALUES (3, "Suga", "Min Yoon Gi", 930309, "Lead Rapper", "NA");
+INSERT INTO BTS VALUES (4, "J-Hope", "Jung Ho Seok", 940218, "Main Dancer", "Sub-Rapper");
+INSERT INTO BTS VALUES (5, "Jimin", "Park Ji Min", 951013, "Main Dancer", "LEad Vocalist");
+INSERT INTO BTS VALUES (6, "V", "Kim Tae Hyung", 951230, "Lead Dancer", "Sub-Vocalist");
+INSERT INTO BTS VALUES (7, "Jungkook", "Jeon Jung Kook", 970901, "Main Vocalist", "Lead Dancer");
+
+--display the database
+Select * from BTS;
+
+--display the database order by birthday
+Select * FROM BTS ORDER BY birthday ASC
