@@ -14,3 +14,6 @@ Select * from BTS;
 
 --display the database order by birthday
 Select * FROM BTS ORDER BY birthday ASC
+
+--who is the leader of the group?
+Select stage_name FROM BTS WHERE position_1 = "Leader";
