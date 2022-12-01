@@ -1,0 +1,35 @@
+--Create a store product (tops) database
+
+CREATE TABLE products (id INTEGER PRIMARY KEY, name TEXT, for TEXT, brand TEXT, price INTEGER, popularity INTEGER);
+INSERT INTO products VALUES (1, "long sleeve top", "women", "calvin klein", 25, 50);
+INSERT INTO products VALUES (2, "long sleeve top", "women", "michael kors", 30, 76);
+INSERT INTO products VALUES (3, "long sleeve top", "women", "anne klein", 15, 24);
+INSERT INTO products VALUES (4, "short sleeve top", "women", "calvin klein", 20, 62);
+INSERT INTO products VALUES (5, "short sleeve top", "men", "polo", 15, 62);
+INSERT INTO products VALUES (6, "long sleeve top", "men", "ralph lauren", 30, 71);
+INSERT INTO products VALUES (7, "long sleeve top", "men", "nautica", 20, 24);
+INSERT INTO products VALUES (8, "short sleeve top", "women", "ralph lauren", 25, 62);
+INSERT INTO products VALUES (9, "long sleeve top", "men", "calvin klein", 20, 45);
+INSERT INTO products VALUES (10, "short sleeve top", "women", "anne klein", 15, 33);
+INSERT INTO products VALUES (11, "long sleeve top", "men", "calvin klein", 25, 50);
+
+--display the database ordered by price. 
+SELECT * FROM products
+ORDER BY price desc; 
+
+--what is the avg price of womens tops? 
+SELECT AVG(price) "avg womens tops price"
+FROM products
+where for='women'; 
+
+--what are the most 5 popular items? 
+SELECT name, for, price, popularity
+FROM products
+order by popularity desc
+limit 5; 
+
+--what are the most the most popular brands
+SELECT brand, SUM(popularity) FROM products GROUP BY brand;
+
+--what are the list of brands the store has
+SELECT brand FROM products ORDER BY brand;
