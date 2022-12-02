@@ -37,3 +37,29 @@ FROM BIT_DB.FebSales Feb
 LEFT JOIN BIT_DB.customers cust
 ON Feb.orderID=cust.order_id
 WHERE Feb.Quantity>2
+
+#8 What products where ordered from 02/13/19 to 02/18/19?
+SELECT distinct Product
+FROM BIT_DB.FebSales
+WHERE orderdate between '02/13/19 00:00' AND '02/18/19 00:00'
+
+#9 How many products where ordered on 02/18/19?
+SELECT sum(Quantity)
+FROM BIT_DB.FebSales
+WHERE orderdate like '02/18/19%'
+
+#10 Sample Query
+SELECT distinct Product
+FROM BIT_DB.FebSales
+WHERE Product like '%Batteries%'
+
+#11 Sample Query
+SELECT distinct Product, Price
+FROM BIT_DB.FebSales 
+WHERE Price like '%.99'
+
+#12 List all the products sold in Los Angeles in February, and include how many of each were sold
+SELECT Product, SUM(Quantity)
+FROM BIT_DB.FebSales
+WHERE location like '%Los Angeles%'
+GROUP BY Product
